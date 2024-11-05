@@ -65,18 +65,18 @@ dune exec ./readme_cli.exe -- "my project" -d "my description"
 
 1. Syntax - key words
 2. Semantics - meaning
-  1. Type-checking rules (static semantics) - program at rest produces a type or fails with an error message
-  2. Evaluation rules (dynamic semantics) - produce a value, exception, or infinite loop
+    1. Type-checking rules (static semantics) - program at rest produces a type or fails with an error message
+    2. Evaluation rules (dynamic semantics) - produce a value, exception, or infinite loop
 3. if expressions
-  1. Syntax: if e1 then e2 else e3 is the same as ternary in TS
-  2. Evaluation Rules:
-    1. if e1 evalutes to true, and if e2 evaluates to v, then if e1 then e2 else e3 evalutes to v
-    2. e1 ==> true and e2 ==> v, then (if e1 then e2 else e3 ==> v)
-  3. Type Checking: if e1 has type bool and e2 has type t and e3 has type t then if e1 then e2 else e3 has type t
+    1. Syntax: if e1 then e2 else e3 is the same as ternary in TS
+    2. Evaluation Rules:
+        1. if e1 evalutes to true, and if e2 evaluates to v, then if e1 then e2 else e3 evalutes to v
+        2. e1 ==> true and e2 ==> v, then (if e1 then e2 else e3 ==> v)
+    3. Type Checking: if e1 has type bool and e2 has type t and e3 has type t then if e1 then e2 else e3 has type t
 4. let expressions
-  1. let [expression] in [definition] expressions - limits scope to definition
-  2. let a = 0 in a;;
-  3. can be nested - let a = 2 in (let b = 4 in a + b) (* evaluates to 6 *)
+    1. let [expression] in [definition] expressions - limits scope to definition
+    2. let a = 0 in a;;
+    3. can be nested - let a = 2 in (let b = 4 in a + b) (* evaluates to 6 *)
 5. Principle of Name Irrelevance: the name of a variable shouldn't intrinsically matter - stop substituting when you
    reach a binding of the same name
 
@@ -86,10 +86,10 @@ Definitions are not expressions, but they syntactically contain expressions
 
 1. Syntax let x = expression where x is an identifier (starts as lowercase only)
 2. Evaluation:
-  1. evaluate e to a value v
-  2. Bind v to x; henceforth, x will evaluate to v (memory location x that contains
-     v)[records.ml](readme_cli/scratches/records.ml)
-  3. let definition is not an expression itself
+    1. evaluate e to a value v
+    2. Bind v to x; henceforth, x will evaluate to v (memory location x that contains
+       v)[records.ml](readme_cli/scratches/records.ml)
+    3. let definition is not an expression itself
 
 ### Directives
 
@@ -115,15 +115,15 @@ Body of the function is not evaluated until the time the function is applied (la
 2. (fun x y -> (x +. y) /. 2.) 42. 45. (* evaluates to 43 *)
 3. Syntax: fun x1 ... xn -> e
 4. Evaluation:
-  1. Evaluate Subexpressions
-  2. Substitute argument values for names of parameters
-  3. Results is v
+    1. Evaluate Subexpressions
+    2. Substitute argument values for names of parameters
+    3. Results is v
 
 #### Named Functions
 
 1. let inc = (fun x -> x + 1) 2;;
 2. let inc = x + 1 (* syntactic sugar but semantically equivalent *)
-  1. inc 42 (* evaluates to 43 *)
+    1. inc 42 (* evaluates to 43 *)
 
 #### Recusrive Functions
 
@@ -184,7 +184,7 @@ Syntax:
 
 1. [] empty list - nil - any type t
 2. e1 :: e2 prepends element e1 to list e2 (:: is cons)
-  1. e1 and e2 must be of the same type
+    1. e1 and e2 must be of the same type
 3. [e1; e2] is sugar for e1 :: e2 :: []
 
 ### Records

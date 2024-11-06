@@ -29,5 +29,5 @@ setup.log
 _opam/
 
 .idea/
-.scratches/
-
+.vscode/
+README-output.md

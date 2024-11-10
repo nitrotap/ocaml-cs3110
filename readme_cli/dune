@@ -1,4 +1,0 @@
-(executable
- (name readme_cli)
- (modules readme_cli)
- (libraries cmdliner))
